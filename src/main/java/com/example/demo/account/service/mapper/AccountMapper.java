@@ -9,8 +9,8 @@ import org.mapstruct.factory.Mappers;
 
 
 import java.util.List;
-// uses = {AddressMapper.class}, unmappedTargetPolicy = ReportingPolicy.IGNORE
-@Mapper(componentModel = "spring")
+
+@Mapper(componentModel = "spring", uses = {AddressMapper.class}, unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface AccountMapper {
 
     AccountMapper INSTANCE = Mappers.getMapper(AccountMapper.class);

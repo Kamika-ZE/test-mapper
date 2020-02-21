@@ -33,9 +33,9 @@ public class Account  {
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
-/*    @ManyToOne(optional = false)
+    @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id", referencedColumnName = "address_id")
-    private Address address;*/
+    private Address address;
 
     @Column(name = "email", length = 50, unique = true, nullable = false)
     private String email;

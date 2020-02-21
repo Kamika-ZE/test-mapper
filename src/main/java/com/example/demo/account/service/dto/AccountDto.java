@@ -20,6 +20,7 @@ public class AccountDto {
     private String firstName;
     private String email;
     private String phoneNumber;
+    private AddressDto address;
     private LocalDateTime registrationDate;
     private LocalDateTime updateDate;
     //ENUM

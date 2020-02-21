@@ -34,6 +34,7 @@ public class DemoApplication {
             accountRepository.save(Account.builder()
                                            .lastName("coz")
                                            .firstName("mickael")
+                                           .address(address)
                                            .email("coz.mickael@gmail.com")
                                            .phoneNumber("0632513519")
                                            .registrationDate(LocalDateTime.now())

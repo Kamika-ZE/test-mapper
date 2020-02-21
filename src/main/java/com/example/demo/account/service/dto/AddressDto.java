@@ -20,5 +20,5 @@ public class AddressDto {
     private String postcode;
     private String city;
 
-    //private Collection<AccountDto> accounts;
+    private Collection<AccountDto> accounts;
 }

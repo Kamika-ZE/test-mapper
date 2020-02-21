@@ -34,7 +34,7 @@ public class Address {
     @Column(name = "city", nullable = false)
     private String city;
 
-/*    @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
-    private Collection<Account> accounts;*/
+    @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
+    private Collection<Account> accounts;
 
 }
