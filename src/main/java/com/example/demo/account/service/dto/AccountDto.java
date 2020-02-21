@@ -8,10 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
 public class AccountDto {
 
     private Integer id;
@@ -20,11 +17,26 @@ public class AccountDto {
     private String firstName;
     private String email;
     private String phoneNumber;
-    private AddressDto address;
+    private Integer addressId;
     private LocalDateTime registrationDate;
     private LocalDateTime updateDate;
     //ENUM
     private Role role;
     private AccountStatus accountStatus;
 
+    @Override
+    public String toString() {
+        return "AccountDto{" +
+                       "id=" + id +
+                       ", lastName='" + lastName + '\'' +
+                       ", firstName='" + firstName + '\'' +
+                       ", email='" + email + '\'' +
+                       ", phoneNumber='" + phoneNumber + '\'' +
+                       ", addressId=" + addressId +
+                       ", registrationDate=" + registrationDate +
+                       ", updateDate=" + updateDate +
+                       ", role=" + role +
+                       ", accountStatus=" + accountStatus +
+                       '}';
+    }
 }

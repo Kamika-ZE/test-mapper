@@ -11,7 +11,6 @@ import java.util.Collection;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
 @Table(name = "address")
 public class Address {
 
@@ -34,7 +33,19 @@ public class Address {
     @Column(name = "city", nullable = false)
     private String city;
 
+    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
     private Collection<Account> accounts;
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                       "id=" + id +
+                       ", housenumber='" + housenumber + '\'' +
+                       ", street='" + street + '\'' +
+                       ", postcode='" + postcode + '\'' +
+                       ", city='" + city + '\'' +
+                       ", accounts=" + accounts +
+                       '}';
+    }
 }

@@ -3,14 +3,13 @@ package com.example.demo.account.service.dto;
 
 import lombok.*;
 
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
 public class AddressDto {
 
     private Integer id;
@@ -20,5 +19,6 @@ public class AddressDto {
     private String postcode;
     private String city;
 
-    private Collection<AccountDto> accounts;
+    @NotNull
+    private Collection<AccountDto> accounts = new ArrayList<>();
 }

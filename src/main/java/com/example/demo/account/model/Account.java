@@ -4,11 +4,8 @@ import com.example.demo.account.model.enumeration.AccountStatus;
 import com.example.demo.account.model.enumeration.Role;
 import lombok.*;
 
-
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Collection;
 
 @Entity
 @Getter
@@ -16,7 +13,6 @@ import java.util.Collection;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
 @Table(name = "account")
 public class Account  {
 
@@ -33,7 +29,9 @@ public class Account  {
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @ManyToOne (fetch = FetchType.EAGER)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @ManyToOne (optional = false)
     @JoinColumn(name = "address_id", referencedColumnName = "address_id")
     private Address address;
 
@@ -57,5 +55,19 @@ public class Account  {
     @Column(name = "account_status", nullable = true)
     private AccountStatus accountStatus;
 
-
+    @Override
+    public String toString() {
+        return "Account{" +
+                       "id=" + id +
+                       ", lastName='" + lastName + '\'' +
+                       ", firstName='" + firstName + '\'' +
+                       ", address=" + address +
+                       ", email='" + email + '\'' +
+                       ", phoneNumber='" + phoneNumber + '\'' +
+                       ", registrationDate=" + registrationDate +
+                       ", updateDate=" + updateDate +
+                       ", role=" + role +
+                       ", accountStatus=" + accountStatus +
+                       '}';
+    }
 }
